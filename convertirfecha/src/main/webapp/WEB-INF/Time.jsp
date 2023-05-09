@@ -11,6 +11,6 @@
 <script type="text/javascript" src="/js/app.js"></script>
 </head>
 <body>
-	<h1>time</h1>
+	<h1> <c:out value="${hora} "></c:out> </h1>
 </body>
 </html>

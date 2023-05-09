@@ -55,24 +55,20 @@ public class MainController {
 		return fecha.substring(0,1).toUpperCase() + fecha.substring(1).toLowerCase();
 	}
 	
-	public String fechaIngles() {
-		return "Hola";
-	};
-	
-	public String saludos(@RequestParam(value="q", required=false)String nombre){
-		return nombre;
-	}
 	
 	
 	@RequestMapping("/time")
-	public String hora() {
+	public String hora(Model modelo) {
+		Date fecha = new Date();
+		SimpleDateFormat horaString = new SimpleDateFormat("hh:mm aa");
+		String horaStrings = horaString.format(fecha).replace(".", "").toUpperCase();
+		modelo.addAttribute("hora", horaStrings);
 		return "Time.jsp";
 	}
 	
 	
-	@RequestMapping("/ad")
-    public String index(Model model) {
-        model.addAttribute("dojoName", "Burbank");
+	@RequestMapping("/index")
+    public String index() {
         return "index.jsp";
     }
 	
