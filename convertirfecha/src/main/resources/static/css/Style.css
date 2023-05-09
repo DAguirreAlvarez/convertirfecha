@@ -9,3 +9,6 @@ div{
 	display:flex;
 	justify-content:space-between;
 }
+#hora{
+	color:green;
+}
